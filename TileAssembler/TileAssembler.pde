@@ -34,5 +34,6 @@ void setup()
   }
   println("Saving full image");
   output.save( "assembled/" + fileBase + "merged" + ext );
+  println("All done");
   exit();
 }
