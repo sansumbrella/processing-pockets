@@ -10,8 +10,8 @@ Don't forget to increase max memory
 String fileBase = "keptile-";
 String separator = "-";
 String ext = ".png";
-int xTiles = 16;
-int yTiles = 16;
+int xTiles = 8;
+int yTiles = 8;
 
 void setup()
 {
