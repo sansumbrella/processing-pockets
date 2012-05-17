@@ -7,7 +7,7 @@ fileBase$X-$Y.png
 Don't forget to increase max memory
 */
 
-String fileBase = "keptile-";
+String fileBase = "tilename-";
 String separator = "-";
 String ext = ".png";
 int xTiles = 8;
