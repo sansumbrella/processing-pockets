@@ -8,10 +8,10 @@
  Assumes that you aren't calling camera() yourself
 
  Example usage:
- TileRenderer renderer(8, ); // 8x size
+ TileRenderer renderer( 8, "path/to/filebase-" ); // 8x size
  while( renderer.next() )
  {
- renderScene(); // draw your content
+   renderScene(); // draw your content
  }
 
  */
@@ -46,7 +46,7 @@ class TileRenderer
   {
     // save the previous region
     if( x != -1 )
-    { save(fileBase + x + "-" + (scaleFactor - (y+1)) + ".png"); }
+    { save(fileBase + x + "-" + (scaleFactor - (y + 1)) + ".png"); }
     // move to the next tile
     incrementTile();
     if ( y < scaleFactor )
@@ -73,24 +73,24 @@ class TileRenderer
 
   private void setFrustum()
   {
-    camera(  width/2.0f, height/2.0f, cameraZ,
-    width/2.0f, height/2.0f, 0, 0, 1, 0);
+    camera(  width / 2.0f, height / 2.0f, cameraZ,
+    width / 2.0f, height / 2.0f, 0, 0, 1, 0);
 
-    frustum(width * (x / (float)scaleFactor - .5f) * mod,
-    width * ((x + 1) / (float)scaleFactor - .5f) * mod,
-    height * (y / (float)scaleFactor - .5f) * mod,
-    height * ((y + 1) / (float)scaleFactor - .5f) * mod,
+    frustum(width * (x / (float)scaleFactor - 0.5f) * mod,
+    width * ((x + 1) / (float)scaleFactor - 0.5f) * mod,
+    height * (y / (float)scaleFactor - 0.5f) * mod,
+    height * ((y + 1) / (float)scaleFactor - 0.5f) * mod,
     cameraZ*mod, 10000);
   }
 
   void unsetFrustum()
   {
-    camera(width/2.0f, height/2.0f, cameraZ,
-    width/2.0f, height/2.0f, 0, 0, 1, 0);
+    camera(width / 2.0f, height / 2.0f, cameraZ,
+    width / 2.0f, height / 2.0f, 0, 0, 1, 0);
 
-    frustum(-(width/2)*mod, (width/2)*mod,
-    -(height/2)*mod, (height/2)*mod,
-    cameraZ*mod, 10000);
+    frustum(-(width / 2) * mod, (width / 2) * mod,
+    -(height / 2) * mod, (height / 2) * mod,
+    cameraZ * mod, 10000);
   }
 }
 
